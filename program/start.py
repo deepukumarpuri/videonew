@@ -9,6 +9,7 @@ from config import (
     BOT_USERNAME,
     GROUP_SUPPORT,
     OWNER_NAME,
+    MUSIC,
     UPDATES_CHANNEL,
 )
 from program import __version__
@@ -82,7 +83,7 @@ async def start_(client: Client, message: Message):
                 ],
                 [
                     InlineKeyboardButton(
-                        "🌐 Source Code", url="https://github.com/levina-lab/video-stream"
+                        "🌐 MAIN UPDATE CHANNEL", url="https://t.me/{MUSIC}"
                     )
                 ],
             ]
@@ -133,7 +134,7 @@ async def get_uptime(client: Client, message: Message):
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await message.reply_text(
-        "🤖 bot status:\n"
-        f"• **uptime:** `{uptime}`\n"
-        f"• **start time:** `{START_TIME_ISO}`"
+        "🤖 Bot Status:\n"
+        f"• **Uptime:** `{uptime}`\n"
+        f"• **Start Time:** `{START_TIME_ISO}`"
     )
